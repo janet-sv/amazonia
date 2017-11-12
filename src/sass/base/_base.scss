@@ -46,7 +46,7 @@ body {
   font-family: $body-font;
   font-size: $body-font-size;
   line-height: $body-line-height;
-  text-align: center;
+  text-align: left;
 }
 
 strong {
@@ -87,6 +87,7 @@ button {
 
 a {
   text-decoration: underline;
+  color: $secondary;
 }
 
 img {

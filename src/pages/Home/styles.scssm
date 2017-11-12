@@ -1,0 +1,170 @@
+@import "~sass/utils/index";
+
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
+  overflow-y: auto;
+
+  @include desktop {
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+.content {
+  margin: auto;
+  margin-top: 80px;
+  padding: 20px;
+  max-width: 1024px;
+
+  @include desktop {
+    min-width: calc(100% - 300px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    margin-top: 0;
+    padding: 50px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  font-size: 25px;
+  margin: 15px 0 40px 0;
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 2px;
+    width: 100px;
+    background: $secondary;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cards {
+  @include widescreen {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.card-helper {
+  @include widescreen {
+    &:first-child {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+}
+
+.card-wrapper {
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    max-width: 421px;
+    min-width: 421px;
+    margin: auto;
+
+    .card.is-big {
+      margin-left: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  @include widescreen {
+    max-width: unset;
+    min-width: 0;
+
+    &.is-big {
+      height: 100%;
+    }
+
+    .card.is-big {
+      max-width: 300px;
+      min-width: 300px;
+      width: 100%;
+      margin-right: 0;
+      height: 100%;
+    }
+  }
+}
+
+.card {
+  background: white;
+  min-width: 120px;
+  max-width: 280px;
+  height: 120px;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+
+  @include bigmobile {
+    height: 170px;
+  }
+
+  @include tablet {
+    height: 160px;
+  }
+
+  @include desktop {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+  }
+
+  @include widescreen {
+    margin: 20px;
+    width: 250px;
+    height: 200px;
+  }
+}
+
+.card-content {
+  width: 100%;
+
+  @include bigmobile {
+    width: 80%;
+  }
+}
+
+.link {
+  width: 100%;
+
+  @include bigmobile {
+    height: calc(100% - 40px);
+  }
+}
+
+.number {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: $primary;
+
+  @include desktop {
+    font-size: 35px;
+  }
+}
+
+.label {
+  line-height: 16px;
+  font-size: 16px;
+  color: $black;
+
+  @include desktop {
+    line-height: 22px;
+    font-size: 22px;
+  }
+}

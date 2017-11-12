@@ -13,7 +13,13 @@
 }
 
 @mixin mobile {
-  @media screen and (max-width: $tablet - 1px) {
+  @media screen and (max-width: $bigmobile - 1px) {
+    @content
+  }
+}
+
+@mixin bigmobile {
+  @media screen and (min-width: $bigmobile), print {
     @content
   }
 }

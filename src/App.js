@@ -1,150 +1,46 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
-import ExampleModal from 'components/ExampleModal';
-import ExampleFetch from 'components/ExampleFetch';
-import reactLogo from 'assets/images/react-logo.png';
-import reactRouterLogo from 'assets/images/react-router-logo.png';
-import sassLogo from 'assets/images/sass-logo.svg';
-import reactCssModulesLogo from 'assets/images/react-css-modules-logo.png';
-import bulmaLogo from 'assets/images/bulma-logo.png';
+import {
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
+import Layout from 'components/Layout';
+import Home from 'pages/Home';
+import Complaints from 'pages/Complaints';
+import Procedure from 'pages/Procedure';
+import MapRegion from 'pages/MapRegion';
+import FirstService from 'pages/FirstService';
+import Login from 'pages/Login';
+import Admin from 'pages/Admin';
+import Detail from 'pages/Detail';
 import './App.scssm';
 
-const title = 'react-simple-boilerplate';
+const title = 'Salvavoz';
 
-const ExampleComponent = ({ title, children }) => (
-  <div className="box" styleName="mb-small">
-    <h3 className="title is-5">{title}</h3>
-    <div>
-      {children}
-    </div>
-  </div>
+const App = () => (
+  <Layout>
+    <Helmet>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>{title}</title>
+    </Helmet>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/login" component={Login} />
+      <Route exact path="/denuncias/:status?" component={Complaints} />
+      <Route exact path="/recepciones/:id" component={FirstService} />
+      <Route exact path="/mapa-regiones" component={MapRegion} />
+{/*      <Route path="/mi-perfil" component={Profile} />
+      <Route path="/mis-tramites" component={Procedure} />
+      <Route path="/expedicion-constancia-sufragio" component={FirstService} />
+      <Route exact path="/admin" component={Admin} />
+      <Route exact path="/detail/:id" component={Detail} />*/}
+      <Redirect to="/" />
+    </Switch>
+  </Layout>
 );
-
-const TechListItem = ({ title, image, link }) => (
-  <div styleName="flex-container">
-    <div styleName="flex-container list-item-info">
-      <span className="has-text-grey-darker" styleName="list-item-title">
-        {title}
-      </span>
-      <img src={image} styleName="list-item-image" alt={title} />
-    </div>
-    <a
-      className="has-text-grey-darker"
-      href={link}
-      target="_blank"
-    >
-      (Docs)
-    </a>
-  </div>
-);
-
-class App extends PureComponent {
-  render() {
-    return (
-      <div>
-        <Helmet>
-          <meta charset="utf-8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-          <title>{title}</title>
-        </Helmet>
-
-        <section className="hero is-medium is-warning is-bold">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                react-simple-boilerplate
-              </h1>
-              <p className="subtitle">
-                A React boilerplate for simple static web apps
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="hero is-light">
-          <div className="hero-body">
-            <div className="container">
-              <h2 className="title">
-                Same workflow as <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a>
-              </h2>
-              <p className="subtitle">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section has-text-left">
-          <div className="container">
-            <h2 className="title">Example Components</h2>
-            <p className="subtitle">
-              You may keep these components in your project or jut use them as reference.
-            </p>
-
-            <div>
-              <ExampleComponent title="Example Modal">
-                <ExampleModal />
-              </ExampleComponent>
-
-              <ExampleComponent title="Example for fetching from an API">
-                <ExampleFetch />
-              </ExampleComponent>
-            </div>
-          </div>
-        </section>
-
-        <section className="section has-text-left">
-          <div className="container">
-            <h2 className="title">Technologies</h2>
-            <h3 className="subtitle">
-              These are some of the technologies that power this project.
-            </h3>
-            <ul>
-              <li>
-                <TechListItem
-                  title="React"
-                  image={reactLogo}
-                  link="https://facebook.github.io/react/docs/hello-world.html"
-                />
-                <TechListItem
-                  title="React Router"
-                  image={reactRouterLogo}
-                  link="https://github.com/ReactTraining/react-router"
-                />
-                <TechListItem
-                  title="Sass"
-                  image={sassLogo}
-                  link="http://sass-lang.com/documentation/file.SASS_REFERENCE.html"
-                />
-                <TechListItem
-                  title="React CSS Modules"
-                  image={reactCssModulesLogo}
-                  link="https://github.com/gajus/babel-plugin-react-css-modules"
-                />
-                <TechListItem
-                  title="Bulma"
-                  image={bulmaLogo}
-                  link="http://bulma.io/documentation/elements/content/"
-                />
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <footer className="footer">
-          <div className="container">
-            <div className="content has-text-centered">
-              <p>
-                <strong>Powered by</strong> <a href="https://github.com/gianlucacandiotti/react-simple-boilerplate">react-simple-boilerplate</a>
-              </p>
-            </div>
-          </div>
-        </footer>
-      </div>
-    );
-  }
-}
 
 export default App;

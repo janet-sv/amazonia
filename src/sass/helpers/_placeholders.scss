@@ -1,0 +1,10 @@
+.has-shadow {
+  box-shadow: 0 2px 6px 0 rgba(111, 48, 7, 0.25);
+}
+
+.absolute-vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

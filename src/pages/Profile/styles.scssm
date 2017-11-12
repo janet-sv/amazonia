@@ -1,0 +1,115 @@
+@import "~sass/utils/index";
+
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $secondary;
+  overflow-y: auto;
+}
+
+.content {
+  width: 80%;
+  max-width: 350px;
+  padding: 30px 0;
+  margin: auto;
+  margin-top: 80px;
+
+  @include tablet {
+    padding: 30px;
+    display: flex;
+    max-width: none;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+
+.logo-wrapper {
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  overflow: hidden;
+  padding: 10px;
+  background: $white;
+  margin: auto;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.name {
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+}
+
+.logout {
+  margin-top: 25px;
+
+  button {
+    border-radius: 0;
+  }
+}
+
+.cards {
+  @include tablet {
+    width: 60%;
+    margin-left: 20px;
+  }
+}
+
+.card {
+  margin-top: 30px;
+  padding: 15px;
+  text-align: left;
+  background: $white;
+
+  &.has-name {
+    @include tablet {
+      margin-top: 40px;
+    }
+  }
+
+  @include tablet {
+    padding: 30px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.info-group {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.info-label {
+  font-weight: 600;
+
+  @include tablet {
+    width: 160px;
+  }
+
+  @include desktop {
+    width: 180px;
+  }
+}
+
+.info-value {
+  &.has-sign {
+    height: 65px;
+  }
+}

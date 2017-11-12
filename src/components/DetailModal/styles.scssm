@@ -1,0 +1,151 @@
+@import "~sass/utils/index";
+
+.content {
+  background: $white;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+  margin: auto;
+  padding: 30px;
+
+  @include desktop {
+    max-width: 700px;
+  }
+}
+
+.close {
+  display: inline-block;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.complaint {
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.section {
+  &.has-photo {
+    @include desktop {
+      min-width: 200px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.image-wrapper {
+  display: inline-block;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  vertical-align: middle;
+  height: 170px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  @include desktop {
+    min-width: 200px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+  }
+}
+
+.image {
+  max-width: unset;
+  max-height: 150%;
+}
+
+.status {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+
+  &.has-code-1 {
+    background: $orange;
+    color: $white;
+  }
+
+  &.has-code-2 {
+    background: $yellow;
+  }
+
+  &.has-code-3 {
+    background: $red;
+    color: $white;
+  }
+
+  &.has-code-4 {
+    background: $green;
+    color: $white;
+  }
+}
+
+.send-action {
+  text-align: center;
+  margin: 20px auto;
+
+  button {
+    background: $secondary;
+    width: 200px;
+    margin: 10px;
+  }
+}
+
+.action {
+  color: $secondary;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.history-title {
+  margin-top: 15px;
+  font-weight: 600;
+  padding: 10px;
+  position: relative;
+  background: white;
+  cursor: pointer;
+}
+
+.down {
+  display: inline-block;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  vertical-align: baseline;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 10px;
+  top: 16px;
+}
+
+.list {}
+
+.list-item {
+  padding: 5px 10px;
+  display: flex;
+  border-bottom: 1px solid $secondary;
+
+  div {
+    width: 50%;
+  }
+}

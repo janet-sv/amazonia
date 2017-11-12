@@ -1,0 +1,70 @@
+@import "~sass/utils/index";
+
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white-bis;
+  overflow-y: auto;
+}
+
+.content {
+  margin: auto;
+  margin-top: 80px;
+  padding: 20px;
+  max-width: 1024px;
+  position: relative;
+
+  @include desktop {
+    padding: 30px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  font-size: 25px;
+  margin: 15px 0 40px 0;
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 2px;
+    width: 100px;
+    background: $primary;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.row {
+  &:nth-child(even) {
+    background: $white;
+  }
+}
+
+.color-1 {
+  color: $green;
+  text-shadow: 2px 2px rgba(111, 48, 7, 0.25);
+}
+
+.color-2 {
+  color: $red;
+  text-shadow: 2px 2px rgba(111, 48, 7, 0.25);
+}
+.color-3 {
+  color: $yellow;
+  text-shadow: 2px 2px rgba(111, 48, 7, 0.25);
+}
+
+.link {
+  padding: 10px;
+  background: $primary;
+  color: $white;
+  text-align: center;
+}

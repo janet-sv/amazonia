@@ -1,0 +1,103 @@
+@import "~sass/utils/index";
+
+.page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
+  overflow-y: auto;
+
+  @include desktop {
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+.content {
+  margin: auto;
+  margin-top: 80px;
+  padding: 20px;
+  max-width: 1024px;
+
+  @include desktop {
+    min-width: calc(100% - 300px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    margin-top: 0;
+    padding: 50px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  font-size: 25px;
+  margin: 15px 0 40px 0;
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 2px;
+    width: 100px;
+    background: $secondary;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cards {
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+    color: $black;
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.card {
+  padding: 15px;
+  margin-top: 30px;
+  text-align: left;
+  background: $white;
+  margin: auto;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    padding: 30px;
+    margin: 10px;
+    height: 150px;
+  }
+}
+
+.name {
+  text-align: center;
+}
+
+.next {
+  display: inline-block;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  vertical-align: middle;
+  height: 45px;
+  width: 45px;
+  min-width: 45px;
+  margin-left: 20px;
+}

@@ -1,24 +1,2 @@
 @import "~sass/utils/index";
 
-.flex-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-
-.list-item-info {
-  margin-right: 15px;
-}
-
-.list-item-title {
-  margin-right: 5px;
-}
-
-.list-item-image {
-  height: 30px;
-  width: auto;
-}
-
-.mb-small {
-  margin-bottom: 15px;
-}

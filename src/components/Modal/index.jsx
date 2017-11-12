@@ -24,10 +24,6 @@ const Modal = ({
     <div className="modal-content">
       {children}
     </div>
-    <button
-      className="modal-close is-large"
-      onClick={handleClose}
-    />
   </div>
 );
 

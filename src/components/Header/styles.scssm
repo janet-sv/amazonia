@@ -1,0 +1,154 @@
+@import "~sass/utils/index";
+
+.header {
+  position: fixed;
+  width: 100%;
+  background: $black;
+  z-index: 1;
+
+  &.no-menu {
+    @include desktop {
+      position: fixed;
+      width: 100%;
+
+    }
+  }
+
+  @include desktop {
+    position: relative;
+    width: 300px;
+    min-width: 300px;
+  }
+}
+
+.wrapper {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  margin: auto;
+
+  &.no-menu {
+    display: flex;
+  }
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.logo-container {
+  display: flex;
+
+  &.no-menu {
+    display: flex;
+    transform: none;
+    bottom: unset;
+    left: unset;
+    position: relative;
+  }
+
+  @include desktop {
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: 25%;
+    transform: translateX(-20%);
+  }
+}
+
+.logo-wrapper {
+  height: 50px;
+
+  &.has-name {
+    margin-left: 15px;
+    height: 25px;
+    align-self: center;
+  }
+}
+
+.username {
+  text-transform: uppercase;
+  letter-spacing: 1.3;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.toggle-button {
+  cursor: pointer;
+  height: 30px;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: $primary;
+  z-index: 2;
+
+  &.is-desktop {
+    display: none;
+
+    @include desktop {
+      display: block;
+      position: relative;
+      width: auto;
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.menu-item {
+  padding: 20px 15px;
+  text-align: center;
+  color: $white;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+
+  &.has-photo {
+    border-bottom: 1px solid $secondary;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  .toggle-button {
+    height: 25px;
+  }
+
+  @include desktop {
+    font-weight: 500;
+    padding: 20px 35px;
+  }
+}
+
+.link  {
+  text-decoration: none;
+}
+
+.photo-wrapper {
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  overflow: hidden;
+  padding: 10px;
+  background: $white;
+  margin: auto;
+}
+
+.logo {
+  border: 7px solid $secondary;
+  border-radius: 150px;
+}

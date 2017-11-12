@@ -8,6 +8,10 @@
 
 $navbar-item-active-color: $primary;
 
+.modal-content {
+  max-height: 90vh !important;
+}
+
 /* Import Bulma */
 
 @import "~bulma/sass/utilities/animations";
